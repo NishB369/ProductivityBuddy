@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Trial from "./Components/Trial";
+import Workspace from "./Components/Workspaces/Workspace";
+import WorkspaceDetail from "./Components/Workspaces/WorkspaceDetail";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 
 const App = () => {
   return (
-    <div>
-      {/* <h1 className="text-3xl underline font-bold">Hello World!</h1> */}
-      <Trial />
-    </div>
+    <Router>
+      <div className="h-[100%] w-[100%] bg-[#191919]">
+        <Routes>
+          <Route path="/" element={<Workspace />} />
+          <Route path="/workspace/:id" element={<WorkspaceDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
